@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{% block title %}{% endblock %}</title>
+            {% load staticfiles %}
+            <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <header class="header">
+                <ul class="navigation">
+                    <a class="main" href="#url">Menu</a>
+                    <li class="n1"><a href="#"><a href="/">Home</a></li>
+                	<li class="n2"><a href="/radsuggestion">Suggestion</a></li>
+                	<li class="n3"><a href="/about">About</a></li>
+                </ul>
+
+            </header>
+
+    {% block content %}{% endblock %}
+
+</div>
+
+</body>
+</html>
