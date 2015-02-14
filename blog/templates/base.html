@@ -1,31 +1,36 @@
 <!doctype html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>{% block title %}{% endblock %}</title>
-            {% load staticfiles %}
-            <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-            <script src="{% static "hands-up.js" %}"></script>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700'
+ rel='stylesheet' type='text/css'>
+        <title>{% block title %}{% endblock %}</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="{% static "hands-up.js" %}"></script>
 
     </head>
 
     <body>
+        <header class="header">
 
-        <div class="wrapper">
-            <header class="header">
-                <ul class="navigation">
-                    <a class="main" href="#url">Menu</a>
-                    <li class="n1"><a href="#"><a href="/">Home</a></li>
-                	<li class="n2"><a href="/radsuggestion">Suggestion</a></li>
-                	<li class="n3"><a href="/about">About</a></li>
-                </ul>
+            <div class="navbar">
+                <div class="logo"><a href="/"><img src="../static/images/logos/cooori-logo-web.png" alt="logo" /></a></div>
+                <div class="menu-button"><a href="#">|||</a></div>
+            </div>
+            <ul class="navigation">
+                <li class="n1"><a href="#"><a href="/">Home</a></li>
+               	<li class="n2"><a href="/radsuggestion">Suggestion</a></li>
+               	<li class="n3"><a href="/about">About</a></li>
+                <li class="n4"><a href="/cooori">Cooori</a></li>
+            </ul>
 
-            </header>
+        </header>
 
     {% block content %}{% endblock %}
 
-</div>
+
 
 </body>
 </html>

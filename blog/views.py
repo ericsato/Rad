@@ -11,6 +11,9 @@ def home(request):
 def about(request):
     return render_to_response('about/index.html')
 
+def cooori(request):
+    return render_to_response('cooori/index.html')
+
 def radsuggestion(request):
     suggestion = Suggestion.objects.order_by('?')[0]
     return render_to_response('radsuggestion/index.html', {'suggestion': suggestion})
