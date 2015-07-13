@@ -1,19 +1,32 @@
-from django.shortcuts import render
-from suggestion.models import Suggestion
+
 
 # Create your views here.
-
-from django.shortcuts import render_to_response
-
-def home(request):
-    return render_to_response('index.html')
+from blog.models import Blog, Category
+from django.shortcuts import render_to_response, get_object_or_404
 
 def about(request):
     return render_to_response('about/index.html')
 
-def cooori(request):
-    return render_to_response('cooori/index.html')
 
-def radsuggestion(request):
-    suggestion = Suggestion.objects.order_by('?')[0]
-    return render_to_response('radsuggestion/index.html', {'suggestion': suggestion})
+def index(request):
+
+    print Category.objects.all()
+
+    return render_to_response('index.html', {
+        'categories': Category.objects.all(),
+        'posts': Blog.objects.all()[:5]
+    })
+
+def view_post(request, slug):
+    return render_to_response('view_post.html', {
+        'post': get_object_or_404(Blog, slug=slug)
+    })
+
+def view_category(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    return render_to_response('view_category.html', {
+        'category': category,
+        'posts': Blog.objects.filter(category=category)[:5]
+    })
+
+

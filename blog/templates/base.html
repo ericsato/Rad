@@ -1,36 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700'
- rel='stylesheet' type='text/css'>
-        <title>{% block title %}{% endblock %}</title>
-        {% load staticfiles %}
-        <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="{% static "hands-up.js" %}"></script>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block head_title %}Welcome to my blog{% endblock %}</title>
+</head>
+<body>
+        <h1>{% block title %}Welcome to my block{% endblock %}</h1>
+        {% block content %}
 
-    </head>
-
-    <body>
-        <header class="header">
-
-            <div class="navbar">
-                <div class="logo"><a href="/"><img src="../static/images/logos/cooori-logo-web.png" alt="logo" /></a></div>
-                <div class="menu-button"><a href="#">|||</a></div>
-            </div>
-            <ul class="navigation">
-                <li class="n1"><a href="#"><a href="/">Home</a></li>
-               	<li class="n2"><a href="/radsuggestion">Suggestion</a></li>
-               	<li class="n3"><a href="/about">About</a></li>
-                <li class="n4"><a href="/cooori">Cooori</a></li>
-            </ul>
-
-        </header>
-
-    {% block content %}{% endblock %}
-
-
-
-</body>
+        {% endblock %}
+    </body>
 </html>
